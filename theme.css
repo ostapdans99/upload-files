@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+
+html {
+	font-size: 10px;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	background: #666;
+}
+
+.container {
+	margin: 0 auto;
+	padding-top: 5rem;
+	width: 800px;
+}
+
+.card {
+	border-radius: 6px;
+	background: #fff;
+	padding: 1rem;
+	box-shadow: 2px 3px 11px rgb(0, 0, 0, 0.2);
+}
+
+.btn {
+	display: inline-block;
+	position: relative;
+	margin-right: 1rem;
+	padding: 1rem 1.5rem;
+	font-weight: 700;
+	color: #42b983;
+	text-decoration: none;
+	text-transform: uppercase;
+	outline: none;
+	background: #fff;
+	border-radius: 99px;
+	border: 1px solid #42b983;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.btn.primary {
+	background: #42b983;
+	color: #fff;
+}
+
+.btn:active {
+	box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.preview {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0.5rem;
+}
+
+.preview-image {
+	position: relative;
+	margin: 0 0.5rem 0.5rem 0;
+	overflow: hidden; 
+}
+
+.preview-image.removing {
+	transform: scale(0);
+	transition: transform .2s;
+}
+
+.preview-image:hover .preview-remove {
+	opacity: 1;
+}
+
+.preview-image:hover .preview-info {
+	bottom: 0;
+}
+
+.preview-image img {
+	display: block;
+	width: 180px;
+	height: auto;
+
+}
+
+.preview-remove,
+.preview-info {
+	position: absolute;
+	right: 0;
+	display: flex;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.5);
+
+	transition: 0.2s;
+}
+
+.preview-remove {
+	top: 0;
+	width: 20px;
+	height: 20px;
+	justify-content: center;
+	font-weight: bold;
+	cursor: pointer;
+	opacity: 0;
+}
+.preview-info {
+	left: 0;
+	bottom: -24px;
+	height: 24px;
+	padding: 0 0.5rem;
+	justify-content: space-between;
+	font-size: 0.8rem;
+}
+
+.preview-info-progress {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background:#42b983;
+	text-align: center;
+	transition: width .2s;
+	width: 30%;
+}
