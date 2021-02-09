@@ -26,6 +26,7 @@ export function upload(selector, options = {}) {
 	let files = [];
 	const onUpload = options.onUpload ?? noop
 	const input = document.querySelector(selector);
+	const btnWrap = createElement("div", ["btn-wrapper"])
 	const preview = createElement("div", ["preview"]);
 
 	const openBtn = createElement("button", ["btn"], "Открыть");
@@ -39,10 +40,10 @@ export function upload(selector, options = {}) {
 	if (options.accept && Array.isArray(options.accept)) {
 		input.setAttribute("accept", options.accept.join(","));
 	}
-
-	input.insertAdjacentElement("afterend", preview);
-	input.insertAdjacentElement("afterend", uploadBtn);
-	input.insertAdjacentElement("afterend", openBtn);
+	input.insertAdjacentElement("afterend", btnWrap)
+	btnWrap.insertAdjacentElement("afterend", preview);
+	btnWrap.insertAdjacentElement("afterbegin", uploadBtn);
+	btnWrap.insertAdjacentElement("afterbegin", openBtn);
 
 	const triggerInput = () => input.click();
 

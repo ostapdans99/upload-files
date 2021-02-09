@@ -10,6 +10,7 @@ body {
 	background: #666;
 }
 
+
 .container {
 	margin: 0 auto;
 	padding-top: 5rem;
@@ -21,6 +22,10 @@ body {
 	background: #fff;
 	padding: 1rem;
 	box-shadow: 2px 3px 11px rgb(0, 0, 0, 0.2);
+}
+
+.title, .btn-wrapper {
+	margin-bottom: 30px;
 }
 
 .btn {
